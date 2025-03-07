@@ -90,4 +90,18 @@ final class ScraperTest extends TestCase
 
         Scraper::scrapeTimes(1, '2024-01-22');
     }
+
+    /**
+     * @return void
+     */
+    public function testInvalidWithRaceCode1AndDate20240122(): void
+    {
+        $this->expectException(\BadMethodCallException::class);
+        $this->expectExceptionMessage(
+            "BVP\MikuniScraper\ScraperCore::__call() - " .
+            "Call to undefined method 'BVP\MikuniScraper\ScraperCore::invalid()'."
+        );
+
+        Scraper::invalid(1, '2024-01-22');
+    }
 }

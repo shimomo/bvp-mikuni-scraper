@@ -51,4 +51,18 @@ final class CommentScraperTest extends TestCase
 
         $this->scraper->scrape(1, '2024-01-22');
     }
+
+    /**
+     * @return void
+     */
+    public function testInvalidWithRaceCode1AndDate20240122(): void
+    {
+        $this->expectException(\BadMethodCallException::class);
+        $this->expectExceptionMessage(
+            "BVP\MikuniScraper\Scrapers\BaseScraper::__call() - " .
+            "Call to undefined method 'BVP\MikuniScraper\Scrapers\BaseScraper::invalid()'."
+        );
+
+        $this->scraper->invalid(1, '2024-01-22');
+    }
 }
