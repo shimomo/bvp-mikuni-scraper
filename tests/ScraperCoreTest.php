@@ -81,7 +81,7 @@ final class ScraperCoreTest extends TestCase
     {
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessage(
-            "BVP\MikuniScraper\Scrapers\ForecastScraper::scrapeYesterday() - " .
+            "BVP\MikuniScraper\Scrapers\ForecastScraper::scrape() - " .
             "The specified key '.z_focus > .focus_list > li' is not found in the content of the URL: " .
             "'https://www.boatrace-mikuni.jp/modules/yosou/group-syussou.php?day=20240122&race=1'."
         );
