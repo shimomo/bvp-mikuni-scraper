@@ -15,16 +15,16 @@ use Carbon\CarbonInterface;
 class TimeScraper extends BaseScraper implements TimeScraperInterface
 {
     /**
-     * @param  string|int                           $raceCode
+     * @param  string|int                           $raceNumber
      * @param  \Carbon\CarbonInterface|string|null  $date
      * @return array
      *
      * @throws \RuntimeException
      */
-    public function scrape(string|int $raceCode, CarbonInterface|string|null $date = null): array
+    public function scrape(string|int $raceNumber, CarbonInterface|string|null $date = null): array
     {
         $date = Carbon::parse($date ?? 'today')->format('Ymd');
-        $crawlerUrl = sprintf($this->baseUrl, 'cyokuzen', $date, $raceCode, '&kind=2');
+        $crawlerUrl = sprintf($this->baseUrl, 'cyokuzen', $date, $raceNumber, '&kind=2');
         $crawler = Scraper::getInstance()->request('GET', $crawlerUrl);
         $times = Scraper::filterByKeys($crawler, [
             '.com-rname',
