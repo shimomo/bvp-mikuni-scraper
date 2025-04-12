@@ -16,15 +16,15 @@ class TimeScraper extends BaseScraper implements TimeScraperInterface
 {
     /**
      * @param  string|int                           $raceNumber
-     * @param  \Carbon\CarbonInterface|string|null  $date
+     * @param  \Carbon\CarbonInterface|string|null  $raceDate
      * @return array
      *
      * @throws \RuntimeException
      */
-    public function scrape(string|int $raceNumber, CarbonInterface|string|null $date = null): array
+    public function scrape(string|int $raceNumber, CarbonInterface|string|null $raceDate = null): array
     {
-        $date = Carbon::parse($date ?? 'today')->format('Ymd');
-        $crawlerUrl = sprintf($this->baseUrl, 'cyokuzen', $date, $raceNumber, '&kind=2');
+        $raceDate = Carbon::parse($raceDate ?? 'today')->format('Ymd');
+        $crawlerUrl = sprintf($this->baseUrl, 'cyokuzen', $raceDate, $raceNumber, '&kind=2');
         $crawler = Scraper::getInstance()->request('GET', $crawlerUrl);
         $times = Scraper::filterByKeys($crawler, [
             '.com-rname',
