@@ -12,5 +12,23 @@
 composer require bvp/mikuni-scraper
 ```
 
+## Usage
+```php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use BVP\MikuniScraper\Scraper;
+
+print_r(Scraper::scrapeComments(12));
+print_r(Scraper::scrapeComments(12, '2025-04-05'));
+
+print_r(Scraper::scrapeForecasts(12));
+print_r(Scraper::scrapeForecasts(12, '2025-04-05'));
+
+print_r(Scraper::scrapeTimes(12));
+print_r(Scraper::scrapeTimes(12, '2025-04-05'));
+```
+
 ## License
 The BVP Mikuni Scraper package is open source software licensed under the [MIT license](LICENSE).
