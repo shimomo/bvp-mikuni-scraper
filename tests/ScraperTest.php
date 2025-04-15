@@ -100,10 +100,10 @@ final class ScraperTest extends TestCase
         $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage(
             "BVP\MikuniScraper\ScraperCore::__call() - " .
-            "Call to undefined method 'BVP\MikuniScraper\ScraperCore::invalid()'."
+            "Call to undefined method 'BVP\MikuniScraper\ScraperCore::ghost()'."
         );
 
-        Scraper::invalid(1, '2024-01-22');
+        Scraper::ghost(1, '2024-01-22');
     }
 
     /**
