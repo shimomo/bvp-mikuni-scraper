@@ -1,11 +1,9 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "bvp/mikuni-scraper",
-    "description": "The BVP Mikuni Scraper package for Boatrace.",
+    "description": "The BVP Mikuni Scraper for Boatrace.",
     "keywords": [
         "boatrace",
-        "japan",
-        "japanese",
         "library",
         "scraper"
     ],
@@ -38,5 +36,7 @@
         "psr-4": {
             "BVP\\MikuniScraper\\Tests\\": "tests/"
         }
-    }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
